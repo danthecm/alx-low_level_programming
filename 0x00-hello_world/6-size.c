@@ -1,9 +1,16 @@
 #include <stdio.h>
-
-int main(void) {
-	printf("Size of an char:  %d sizeof(char)")
-	printf("Size of an int: %d sizeof(int)")
-	printf("Size of an long:  %d sizeof(long)")
-	printf("Size of an long long int: %d sizeof(long long)")
-	printf("Size of an float: %d sizeof(float)")
+/**
+ *
+ * This is a comment
+ *
+ * Good to go
+ * 
+ */
+int main(void) 
+{
+	printf("Size of an char: ", sizeof(char), " byte(s)")
+	printf("Size of an int: ", sizeof(int), " byte(s)")
+	printf("Size of an long int: ", sizeof(long int), " byte(s)")
+	printf("Size of an long long int: ", sizeof(long long), " byte(s)")
+	printf("Size of an float: ", sizeof(float), "byte(s)")
 }
