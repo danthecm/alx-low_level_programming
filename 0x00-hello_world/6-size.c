@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * This is a comment
- * Good to go
  * 
+ * This is a return comment
  */
 int main(void) 
 {
