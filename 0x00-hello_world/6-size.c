@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
  * This is a comment
- * 
- * This is a return comment
- */
+ *
+ * Thi is good
+*/
 int main(void) 
 {
 	printf("Size of a char: %d byte(s)\n", sizeof(char));
