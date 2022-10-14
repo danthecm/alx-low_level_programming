@@ -3,7 +3,7 @@
 /**
  * main - put out
  *
- * Return zero
+ * Return: zero
  */
 int main(void)
 {
