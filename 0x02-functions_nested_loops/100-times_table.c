@@ -12,7 +12,7 @@ void print_times_table(int n)
 	{
 		for (; multipler < n; multipler++)
 		{
-			int result = multipler * n;
+			//int result = multipler * n;
 			_putchar(0 * 1);
 			_putchar(',');
 		}
