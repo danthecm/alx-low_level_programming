@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * main - check for upper case
+ * _isupper - check for upper case
+ * @c: int c
  * Return: zero or one
  */
 
