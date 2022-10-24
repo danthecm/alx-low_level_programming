@@ -3,7 +3,7 @@
  * print_rev - print a number in reverse
  * @s: a pointer
  * Return: void
-*/
+ */
 void print_rev(char *s)
 {
 	int length = 0;
@@ -13,10 +13,12 @@ void print_rev(char *s)
 		length++;
 	}
 
-	for (; length >= 0; length--)
+	if (length != 0)
 	{
-		_putchar(s[length]);
+		for (; length >= 0; length--)
+		{
+			_putchar(s[length]);
+		}
 	}
 	_putchar('\n');
-
 }
