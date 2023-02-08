@@ -28,15 +28,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		hash_node_t *prev = ht->array[index];
 
-		ht->array[index]->key = new_key;
-		ht->array[index]->value = new_value;
-		ht->array[index]->next = prev;
+		hash_node_t *new_head;
+
+		new_head->key = new_key;
+		new_head->value = new_value;
+		new_head->next = prev;
+
+		ht->array[index] = new_head;
 	}
 	else
 	{
-		ht->array[index]->key = new_key;
-		ht->array[index]->value = new_value;
-		ht->array[index]->next = NULL;
+		hash_node_t *new_head;
+
+		new_head->key = new_key;
+		new_head->value = new_value;
+		new_head->next = NULL;
+
+		ht->array[index] = new_head;
 	}
 
 	return (1);
