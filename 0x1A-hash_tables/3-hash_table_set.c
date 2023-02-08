@@ -11,29 +11,38 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	char *my_key;
+	char *my_value;
+	long int index;
+	hash_node_t *new_element;
+
 	if (strcmp(key, ""))
 	{
 		return (0);
 	}
 
-	const char my_value = value;
+    my_key = malloc(sizeof(key));
+    my_value = malloc(sizeof(value));
 
-	unsigned long int index = key_index(key, ht->size);
-	hash_node_t *new_element = ht->array[index];
+    strcpy(my_key, key);
+    strcpy(my_value, value);
 
-	if (new_element->next != NULL)
-	{
-		hash_node_t *prev = new_element->next;
+    index = key_index((unsigned char *)key, ht->size);
+    new_element = ht->array[index];
 
-		new_element->key = key;
-		new_element->value = my_value;
-		new_element->next = prev;
-	}
-	else
-	{
-		new_element->key = key;
-		new_element->value = my_value;
-		new_element->next = NULL;
-	}
-	return (1);
+    if (new_element->next != NULL)
+    {
+	hash_node_t *prev = new_element->next;
+
+	new_element->key = my_key;
+	new_element->value = my_value;
+	new_element->next = prev;
+    }
+    else
+    {
+	new_element->key = my_key;
+	new_element->value = my_value;
+	new_element->next = NULL;
+    }
+    return (1);
 }
