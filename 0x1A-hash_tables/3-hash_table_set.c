@@ -28,9 +28,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		hash_node_t *prev = malloc(sizeof(hash_node_t));
 
-		prev = ht->array[index];
-
 		hash_node_t *new_head = malloc(sizeof(hash_node_t));
+
+		prev = ht->array[index];
 
 		new_head->key = new_key;
 		new_head->value = new_value;
