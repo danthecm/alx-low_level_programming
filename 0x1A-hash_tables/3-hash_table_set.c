@@ -21,28 +21,28 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-    my_key = malloc(sizeof(key));
-    my_value = malloc(sizeof(value));
+	my_key = malloc(sizeof(key));
+	my_value = malloc(sizeof(value));
 
-    strcpy(my_key, key);
-    strcpy(my_value, value);
+	strcpy(my_key, key);
+	strcpy(my_value, value);
 
-    index = key_index((unsigned char *)key, ht->size);
-    new_element = ht->array[index];
+	index = key_index((unsigned char *)key, ht->size);
+	new_element = ht->array[index];
 
-    if (new_element->next != NULL)
-    {
-	hash_node_t *prev = new_element->next;
+	if (new_element->next != NULL)
+	{
+		hash_node_t *prev = new_element->next;
 
-	new_element->key = my_key;
-	new_element->value = my_value;
-	new_element->next = prev;
-    }
-    else
-    {
-	new_element->key = my_key;
-	new_element->value = my_value;
-	new_element->next = NULL;
-    }
-    return (1);
+		new_element->key = my_key;
+		new_element->value = my_value;
+		new_element->next = prev;
+	}
+	else
+	{
+		new_element->key = my_key;
+		new_element->value = my_value;
+		new_element->next = NULL;
+	}
+	return (1);
 }
