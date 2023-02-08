@@ -14,7 +14,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *my_key;
 	char *my_value;
 	long int index;
-	hash_node_t *new_element;
 
 	if (strcmp(key, ""))
 	{
@@ -28,21 +27,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(my_value, value);
 
 	index = key_index((unsigned char *)key, ht->size);
-	new_element = ht->array[index];
 
-	if (new_element->next != NULL)
+	if (ht->array[index]->next != NULL)
 	{
-		hash_node_t *prev = new_element->next;
+		hash_node_t *prev = ht->array[index]->next;
 
-		new_element->key = my_key;
-		new_element->value = my_value;
-		new_element->next = prev;
+		ht->array[index]->key = my_key;
+		ht->array[index]->value = my_value;
+		ht->array[index]->next = prev;
 	}
 	else
 	{
-		new_element->key = my_key;
-		new_element->value = my_value;
-		new_element->next = NULL;
+		ht->array[index]->key = my_key;
+		ht->array[index]->value = my_value;
+		ht->array[index]->next = NULL;
 	}
 
 	free(my_key);
